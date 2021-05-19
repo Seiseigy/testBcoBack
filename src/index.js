@@ -122,11 +122,7 @@ app.get("/getTransferHistory", function (req, res) {
     if (error) {
       res.status(500).send({ status: "error", message: error.message });
     } else {
-      if(history.length != 0) {
-        res.status(200).send({ status: "ok", data: history });
-      } else {
-        res.status(400).send({ status: 'error', message: 'There are no transfers to show' });
-      }
+      res.status(200).send({ status: "ok", data: history });
     }
   })
 });
